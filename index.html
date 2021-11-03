@@ -80,8 +80,20 @@
   </header>
 
   <main>
-    <div>
-
+    <div class="container-fluid">
+      <div class="card bg-dark text-white rounded-0 border-0">
+        <img
+          src="https://images.pexels.com/photos/247204/pexels-photo-247204.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"
+          class="card-img" alt="..." style="max-height: 700px;">
+        <div class="card-img-overlay d-flex flex-column align-items-center justify-content-center"
+          style="background-color: rgba(0, 0, 0, .4)">
+          <div>
+            <p class="display-6">It's the</p>
+            <h5 class="display-1 fw-bold">Black Friday</h5>
+            <p class="text-end">More deals >></p>
+          </div>
+        </div>
+      </div>
     </div>
 
     <h3 class="text-center">Shop by category</h3>
@@ -553,6 +565,7 @@
 
   <script src="./assets/js/bootstrap.min.js"></script>
   <script src="./assets/js/scripts.js"></script>
+  <!-- TODO: refactor and send it to js file -->
   <script>
     function getTimeRemaining(endtime) {
       const total = Date.parse(endtime) - Date.parse(new Date());
