@@ -13,8 +13,30 @@
 </head>
 
 <body>
-
   <header>
+    <div class="alert alert-dark alert-dismissible fade show rounded-0 d-flex justify-content-around" role="alert">
+      <div class="d-flex align-items-center">
+        <span class="mx-1">Usa el codigo</span>
+        <strong class="list-group-item p-1 px-2 rounded-3 text-danger">MR10</strong>
+        <span class="mx-1">para un 20% de descuento</span>
+      </div>
+
+      <div>
+        <h4 id="clock">
+          <span id="days" class="text-danger"></span>
+          <span class="text-white">D</span>
+          <span id="hours" class="text-danger"></span>
+          <span class="text-white">H</span>
+          <span id="minutes" class="text-danger"></span>
+          <span class="text-white">M</span>
+          <span id="seconds" class="text-danger"></span>
+          <span class="text-white">S</span>
+        </h4>
+      </div>
+
+      <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+    </div>
+
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <div class="container-fluid">
         <a class="navbar-brand" href="#">Navbar</a>
@@ -58,6 +80,10 @@
   </header>
 
   <main>
+    <div>
+
+    </div>
+
     <h3 class="text-center">Shop by category</h3>
     <div class="container">
       <div class="row">
@@ -527,6 +553,51 @@
 
   <script src="./assets/js/bootstrap.min.js"></script>
   <script src="./assets/js/scripts.js"></script>
+  <script>
+    function getTimeRemaining(endtime) {
+      const total = Date.parse(endtime) - Date.parse(new Date());
+      const seconds = Math.floor((total / 1000) % 60);
+      const minutes = Math.floor((total / 1000 / 60) % 60);
+      const hours = Math.floor((total / (1000 * 60 * 60)) % 24);
+      const days = Math.floor(total / (1000 * 60 * 60 * 24));
+
+      return {
+        total,
+        days,
+        hours,
+        minutes,
+        seconds
+      };
+    }
+
+    function initializeClock(id, endtime) {
+      const clock = document.getElementById(id);
+      const daysSpan = clock.querySelector('#days');
+      const hoursSpan = clock.querySelector('#hours');
+      const minutesSpan = clock.querySelector('#minutes');
+      const secondsSpan = clock.querySelector('#seconds');
+
+
+      function updateClock() {
+        const t = getTimeRemaining(endtime);
+
+        daysSpan.innerHTML = t.days;
+        hoursSpan.innerHTML = ('0' + t.hours).slice(-2);
+        minutesSpan.innerHTML = ('0' + t.minutes).slice(-2);
+        secondsSpan.innerHTML = ('0' + t.seconds).slice(-2);
+
+        if (t.total <= 0) {
+          clearInterval(timeinterval);
+        }
+      }
+
+      updateClock();
+      const timeinterval = setInterval(updateClock, 1000);
+    }
+
+    const deadline = new Date(Date.parse(new Date()) + 15 * 24 * 60 * 60 * 1000);
+    initializeClock('clock', deadline);
+  </script>
 </body>
 
 </html>
