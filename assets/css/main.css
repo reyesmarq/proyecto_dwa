@@ -1,36 +1,52 @@
+/************************************************/
+/* Utils                                        */
+/************************************************/
+.u\:banner {
+  max-height: 400px;
+  object-fit: cover;
+}
+
+.u\:banner-text {
+  background-color: rgba(0, 0, 0, .8);
+}
+
+/************************************************/
+/* Progress bar height */
+/************************************************/
 .progress {
   height: 10px;
 }
 
+/* Fash sales carousel */
 @media (max-width: 767px) {
-  .carousel-inner .carousel-item > div {
+  #flashSaleCarousel > .carousel-inner .carousel-item > div {
     display: none;
   }
-  .carousel-inner .carousel-item > div:first-child {
+  #flashSaleCarousel > .carousel-inner .carousel-item > div:first-child {
     display: block;
   }
 }
 
-.carousel-inner .carousel-item.active,
-.carousel-inner .carousel-item-next,
-.carousel-inner .carousel-item-prev {
+#flashSaleCarousel > .carousel-inner .carousel-item.active,
+#flashSaleCarousel > .carousel-inner .carousel-item-next,
+#flashSaleCarousel > .carousel-inner .carousel-item-prev {
   display: flex;
 }
 
 /* medium and up screens */
 @media (min-width: 768px) {
-  .carousel-inner .carousel-item-end.active,
-  .carousel-inner .carousel-item-next {
+  #flashSaleCarousel > .carousel-inner .carousel-item-end.active,
+  #flashSaleCarousel > .carousel-inner .carousel-item-next {
     transform: translateX(16.66%);
   }
 
-  .carousel-inner .carousel-item-start.active,
-  .carousel-inner .carousel-item-prev {
+  #flashSaleCarousel > .carousel-inner .carousel-item-start.active,
+  #flashSaleCarousel > .carousel-inner .carousel-item-prev {
     transform: translateX(-16.66%);
   }
 }
 
-.carousel-inner .carousel-item-end,
-.carousel-inner .carousel-item-start {
+#flashSaleCarousel > .carousel-inner .carousel-item-end,
+#flashSaleCarousel > .carousel-inner .carousel-item-start {
   transform: translateX(0);
 }

@@ -1,4 +1,5 @@
-let items = document.querySelectorAll('.carousel .carousel-item');
+const flashSaleCarousel = document.getElementById('flashSaleCarousel');
+let items = flashSaleCarousel.querySelectorAll('.carousel .carousel-item');
 
 items.forEach(el => {
   const minPerSlide = 6;
