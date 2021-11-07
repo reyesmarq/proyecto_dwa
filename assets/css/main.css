@@ -19,34 +19,34 @@
 
 /* Fash sales carousel */
 @media (max-width: 767px) {
-  #flashSaleCarousel > .carousel-inner .carousel-item > div {
+  .u\:slider > .carousel-inner .carousel-item > div {
     display: none;
   }
-  #flashSaleCarousel > .carousel-inner .carousel-item > div:first-child {
+  .u\:slider > .carousel-inner .carousel-item > div:first-child {
     display: block;
   }
 }
 
-#flashSaleCarousel > .carousel-inner .carousel-item.active,
-#flashSaleCarousel > .carousel-inner .carousel-item-next,
-#flashSaleCarousel > .carousel-inner .carousel-item-prev {
+.u\:slider > .carousel-inner .carousel-item.active,
+.u\:slider > .carousel-inner .carousel-item-next,
+.u\:slider > .carousel-inner .carousel-item-prev {
   display: flex;
 }
 
 /* medium and up screens */
 @media (min-width: 768px) {
-  #flashSaleCarousel > .carousel-inner .carousel-item-end.active,
-  #flashSaleCarousel > .carousel-inner .carousel-item-next {
+  .u\:slider > .carousel-inner .carousel-item-end.active,
+  .u\:slider > .carousel-inner .carousel-item-next {
     transform: translateX(16.66%);
   }
 
-  #flashSaleCarousel > .carousel-inner .carousel-item-start.active,
-  #flashSaleCarousel > .carousel-inner .carousel-item-prev {
+  .u\:slider > .carousel-inner .carousel-item-start.active,
+  .u\:slider > .carousel-inner .carousel-item-prev {
     transform: translateX(-16.66%);
   }
 }
 
-#flashSaleCarousel > .carousel-inner .carousel-item-end,
-#flashSaleCarousel > .carousel-inner .carousel-item-start {
+.u\:slider > .carousel-inner .carousel-item-end,
+.u\:slider > .carousel-inner .carousel-item-start {
   transform: translateX(0);
 }
