@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Proyecto DWA</title>
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
+  <link rel="stylesheet" href="../assets/css/main.css">
+</head>
+
+<body>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="../index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="./about.html">About us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="./contact.html">Contact Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="./tienda.html">Tienda</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main class="my-5">
+    <div class="container">
+      <!-- Botones -->
+      <div class="row mb-4">
+        <div class="col-md-6">
+          <button class="btn btn-primary btn-sm px-4 mb-2">
+            <i class="bi bi-facebook pe-none pe-1"></i>
+            Compartir en facebook
+          </button>
+          <button class="btn btn-secondary btn-sm px-4 mb-2">
+            <i class="bi bi-share-fill pe-none pe-1"></i>
+            Compartir carrito de compras
+          </button>
+        </div>
+        <div class="col-md-6 text-md-end">
+          <button class="btn btn-danger btn-sm px-4" id="btnBorrarCarrito">
+            <i class="bi bi-trash pe-none pe-1"></i>
+            Vaciar carrito de compras
+          </button>
+        </div>
+      </div>
+
+      <!-- Tabla de productos -->
+      <div class="table-responsive">
+        <table class="table border mb-4">
+          <thead>
+            <tr class="text-center small">
+              <th scope="col" class="border">Imagen</th>
+              <th scope="col" class="border">Descripcion del producto</th>
+              <th scope="col" class="border">cantidad</th>
+              <th scope="col" class="border">Precio unitario</th>
+              <th scope="col" class="border">Precio Total</th>
+              <th scope="col" class="border">Eliminar</th>
+            </tr>
+          </thead>
+          <tbody id="checkoutBody">
+            <!-- Seccion de los productos, injectados con javascript -->
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Cartas resumen -->
+      <div class="row">
+        <div class="col-md-4">
+          <div class="card mb-3">
+            <div class="card-header py-3 fw-bold txt:uppercase">
+              Tipo de entrega
+              <h6 class="text-muted small txt:lowercase mt-1">
+                Todos los envíos se realizan en días hábiles.
+              </h6>
+            </div>
+            <div class="card-body pb-4">
+              <label for="factura" class="form-label small">Elija una opcion</label>
+              <select class="form-select" id="factura">
+                <option value="ticket" selected>Ticket</option>
+                <option value="factura">Factura</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card mb-3">
+            <div class="card-header py-3 fw-bold txt:uppercase">
+              Factura
+              <h6 class="text-muted small txt:lowercase mt-1">
+                Selecciona Ticket, si solo necesita su comprobante en caso de garantía. Selecciona Factura, si necesita
+                declarar impuestos ante hacienda.
+              </h6>
+            </div>
+            <div class="card-body pb-4">
+              <div class="form-control border-0">
+                <label for="entrega" class="form-label small">Tipo de entrega</label>
+                <select class="form-select" id="entrega">
+                  <option value="recoger" selected>Recoger en una sucursal</option>
+                  <option value="domicilio">A domicilio</option>
+                </select>
+              </div>
+              <div class="form-control border-0">
+                <label for="metodo-pago" class="form-label small">Metodo de pago</label>
+                <select class="form-select" id="metodo-pago">
+                  <option value="sucursal" selected>Pagar en sucursal</option>
+                  <option value="linea">Pagar en linea</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card mb-3">
+            <div class="card-body">
+              <label for="factura" class="form-label small">Si tienes un cupón ingrésalo aquí:</label>
+              <form class="d-flex">
+                <div class="input-group">
+                  <input type="text" class="form-control" placeholder="Cupon" required>
+                  <button class="btn btn-outline-secondary" type="submit">Enviar</button>
+                </div>
+              </form>
+            </div>
+          </div>
+
+          <div class="card mb-3">
+            <div class="card-header fw-bold txt:uppercase">
+              <table class="table table-borderless text-center">
+                <tbody>
+                  <tr>
+                    <td>
+                      <h5>Subtotal</h5>
+                    </td>
+                    <td id="subtotal">
+                      <!-- Numero es manejado a traves de javascript -->
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <h5>Envio</h5>
+                    </td>
+                    <td id="envio">$0.00</td>
+                  </tr>
+                  <tr>
+                    <td class="text-primary">
+                      <h5>Total<br> (iva incluido)</h5>
+                    </td>
+                    <td id="total" class="text-primary">$0.00</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="card-body pb-4">
+              <div class="form-check d-flex justify-content-center">
+                <input class="form-check-input me-2" type="checkbox" value="" id="terminos">
+                <label class="form-check-label" for="terminos">
+                  Acepto terminos y condiciones
+                </label>
+              </div>
+            </div>
+            <div class="card-footer p-3 text-center bg-white">
+              <button class="btn btn-secondary btn-sm">Continuar con el pago</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <aside>
+    <a class="fixed-bottom m-1 text-end"
+      href="https://api.whatsapp.com/send?phone=50375127858&text=Hola%2C+quisiera+saber+las+ofertas+del+d%C3%ADa+de+hoy."
+      target="_blank">
+      <img src="../assets/images/logo-wasap.png" width="55" height="55">
+    </a>
+    <a class="fixed-bottom m-5 text-end" href="https://www.messenger.com/t/845262605684563" target="_blank">
+      <img src="../assets/images/Messenger_logo.png" width="55" height="55">
+    </a>
+  </aside>
+
+  <footer class="py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-2 my-1">
+          <ul class="list-group">
+            <li class="list-group-item border-0 text-uppercase fw-bold">
+              <small>Customer info</small>
+            </li>
+            <li class="list-group-item border-0">
+              <a href="" class="text-muted text-decoration-none">About SHEIN</a>
+            </li>
+            <li class="list-group-item border-0">
+              <a href="" class="text-muted text-decoration-none">Affiliate</a>
+            </li>
+            <li class="list-group-item border-0">
+              <a href="" class="text-muted text-decoration-none">Fashion blogger</a>
+            </li>
+            <li class="list-group-item border-0">
+              <a href="" class="text-muted text-decoration-none">Social responability</a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-md-2 my-1">
+          <ul class="list-group">
+            <li class="list-group-item border-0 text-uppercase fw-bold">
+              <small>Help & Support</small>
+            </li>
+            <li class="list-group-item border-0">
+              <a href="" class="text-muted text-decoration-none">Shipping info</a>
+            </li>
+            <li class="list-group-item border-0">
+              <a href="" class="text-muted text-decoration-none">Returns</a>
+            </li>
+            <li class="list-group-item border-0">
+              <a href="" class="text-muted text-decoration-none">How to order</a>
+            </li>
+            <li class="list-group-item border-0">
+              <a href="" class="text-muted text-decoration-none">How to Order</a>
+            </li>
+            <li class="list-group-item border-0">
+              <a href="" class="text-muted text-decoration-none">How to Track</a>
+            </li>
+            <li class="list-group-item border-0">
+              <a href="" class="text-muted text-decoration-none">Size Guide</a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-md-2 my-1">
+          <ul class="list-group">
+            <li class="list-group-item border-0 text-uppercase fw-bold">
+              <small>Customer care</small>
+            </li>
+            <li class="list-group-item border-0">
+              <a href="" class="text-muted text-decoration-none">Contact us</a>
+            </li>
+            <li class="list-group-item border-0">
+              <a href="" class="text-muted text-decoration-none">Payment Method</a>
+            </li>
+            <li class="list-group-item border-0">
+              <a href="" class="text-muted text-decoration-none">Bonux Point</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- footer right side -->
+        <div class="col my-1">
+          <div class="row">
+            <div class="col-md-8">
+              <p class="fw-bold text-uppercase">
+                <small>find us on</small>
+              </p>
+              <i class="mx-2 fs-2 | fa-brands fa-facebook-f"></i>
+              <i class="mx-2 fs-2 | fa-brands fa-instagram"></i>
+              <i class="mx-2 fs-2 | fa-brands fa-twitter"></i>
+              <i class="mx-2 fs-2 | fa-brands fa-youtube"></i>
+              <i class="mx-2 fs-2 | fa-brands fa-pinterest"></i>
+              <i class="mx-2 fs-2 | fa-brands fa-snapchat"></i>
+              <i class="mx-2 fs-2 | fa-brands fa-tiktok"></i>
+            </div>
+            <div class="col-md-4">
+              <p class="fw-bold text-uppercase">
+                <small>app</small>
+              </p>
+              <i class="mx-2 fs-2 | fa-brands fa-apple"></i>
+              <i class="mx-2 fs-2 | fa-brands fa-android"></i>
+            </div>
+            <div class="col-md-12 mt-4">
+              <p class="fw-bold text-uppercase">
+                <small>sign up for shein style news</small>
+              <form>
+                <div class="input-group">
+                  <input type="text" class="form-control" placeholder="Email address">
+                  <button class="btn btn-dark px-4" type="button">Subscribe</button>
+                </div>
+                <small>By clicking the subscribe button, you are agreeing to our Privacy and Cookie policy</small>
+              </form>
+              </p>
+            </div>
+
+            <div class="col">
+              <p class="fw-bold text-uppercase">
+                <small>we accept</small>
+              </p>
+              <i class="mx-2 fs-2 | fa-brands fa-cc-visa"></i>
+              <i class="mx-2 fs-2 | fa-brands fa-cc-mastercard"></i>
+              <i class="mx-2 fs-2 | fa-brands fa-cc-amex"></i>
+              <i class="mx-2 fs-2 | fa-brands fa-cc-discover"></i>
+              <i class="mx-2 fs-2 | fa-brands fa-cc-paypal"></i>
+              <i class="mx-2 fs-2 | fa-brands fa-bitcoin"></i>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-12 mt-4">
+          <div class="d-flex flex-column">
+            <small class="m-0">©2009-2021 SHEIN All Rights Reserved</small>
+            <ul class="list-group list-group-horizontal">
+              <li class="list-group-item border-0 border-end p-0 pe-2">
+                <a href="">
+                  <small class="text-dark">Privacy center</small>
+                </a>
+              </li>
+              <li class="list-group-item border-0 border-end p-0 px-2">
+                <a href="">
+                  <small class="text-dark">Privacy & Cookie policy</small>
+                </a>
+              </li>
+              <li class="list-group-item border-0 border-end p-0 px-2">
+                <a href="">
+                  <small class="text-dark">Manage Cookies</small>
+                </a>
+              </li>
+              <li class="list-group-item border-0 border-end p-0 px-2">
+                <a href="">
+                  <small class="text-dark">Terms and Conditions</small>
+                </a>
+              </li>
+              <li class="list-group-item border-0 border-end p-0 px-2">
+                <a href="">
+                  <small class="text-dark">Copyright Notice</small>
+                </a>
+              </li>
+              <li class="list-group-item border-0 border-end p-0 px-2">
+                <a href="">
+                  <small class="text-dark">Imprint</small>
+                </a>
+              </li>
+              <li class="list-group-item border-0 p-0 px-2">
+                <a href="">
+                  <small class="text-dark">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <span>El Salvador</span>
+                  </small>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../assets/js/bootstrap.min.js"></script>
+  <script src="../assets/js/scripts.js"></script>
+  <script>
+    (() => {
+      const TBody = document.getElementById('checkoutBody');
+      // construyendo la logica una vez el dom haya cargado completamente
+      document.addEventListener('DOMContentLoaded', (e) => {
+        if (!TBody) TBody = document.getElementById('checkoutBody');
+        const BtnBorrarCarrito = document.getElementById('btnBorrarCarrito');
+        let Entrega = document.getElementById('entrega');
+
+        // Actualizando el total
+        actualizarTotal();
+
+        // build the checkout
+        buildCheckout();
+
+        TBody.addEventListener('click', (e) => {
+          // If the click was over the trash button
+          if (e.target.dataset['action'] === 'delete') {
+            removeProduct(e);
+          }
+        });
+
+        TBody.addEventListener('change', (e) => {
+          if (e.target.dataset['action'] === 'quantity') {
+            updateProduct(e); // This should re render the layout.
+          }
+        });
+
+        BtnBorrarCarrito.addEventListener('click', () => {
+          localStorage.setItem('checkout', JSON.stringify([]));
+
+          actualizarTotal();
+          buildCheckout();
+        });
+
+        Entrega.addEventListener('change', (e) => {
+          actualizarTotal();
+        });
+      });
+
+      /**
+       * @returns {void}
+       */
+      function buildCheckout() {
+        let products = JSON.parse(localStorage.getItem('checkout'));
+
+        let htmlContent = products.map((product) => {
+          let imageUrl = `../assets/images/${product.imageUrl}`;
+          console.log('🚀 ~ imageUrl', imageUrl)
+          return `
+          <tr class="align-middle">
+            <th scope="row" class="p-4">
+              <img src="${imageUrl}" alt="" width="100">
+            </th>
+            <td class="p-4">${product.description}</td>
+            <td class="text-center p-4">
+              <input
+                type="number"
+                class="form-control"
+                style="width: 100px"
+                value="${product.quantity}"
+                min="1"
+                max="10"
+                data-action="quantity"
+                data-product-id=${product.id}>
+            </td>
+            <td class="text-center p-4">$${product.price}</td>
+            <td class="text-center p-4">$${Number(product.price * product.quantity).toFixed(2)}</td>
+            <td class="text-center p-4">
+              <i class="fa-solid fa-trash cursor:pointer text-danger" data-product-id="${product.id}" data-action="delete"></i>
+            </td>
+          </tr>
+        `;
+        })
+          .join(',')
+          .replace(/\,/g, '')
+          .toString();
+
+        TBody.innerHTML = htmlContent;
+      }
+
+      function removeProduct(e) {
+        let productId = e.target.dataset['productId'];
+
+        if (!productId) return;
+
+        // Seleccionando los productos que ya estan en el localstorage
+        let products = Array.from(JSON.parse(localStorage.getItem('checkout')));
+
+        // Seleccionar todos los productos excepto el que vamos a eliminar, para dejarlo fuera del arreglo
+        products = products.filter((product) => product.id != productId);
+
+        // Guardamos la nueva informacion del arreglo
+        localStorage.setItem('checkout', JSON.stringify(products));
+
+        // calculando el total
+        actualizarTotal();
+
+        // Contruimos nuevamente el layout
+        buildCheckout();
+      }
+
+      function updateProduct(e) {
+        let quantity = e.target.value;
+        let productId = e.target.dataset['productId'];
+
+        // getting the local state of the products
+        let products = Array.from(JSON.parse(localStorage.getItem('checkout')));
+
+        // getting the index of the products we are about to change
+        let product = products.find((product) => product.id == productId);
+        let productIndex = products.findIndex((product) => product.id == productId);
+
+        // Updating the data
+        products.splice(productIndex, 1, { ...product, quantity });
+
+        // updateing the local storage with the new products object
+        localStorage.setItem('checkout', JSON.stringify(products));
+
+        // Actualizando el total
+        actualizarTotal();
+
+        // re- render the html
+        buildCheckout();
+      }
+
+      function actualizarTotal() {
+        let Subtotal = document.getElementById('subtotal');
+        let Envio = document.getElementById('envio');
+        let Total = document.getElementById('total');
+        let productos = JSON.parse(localStorage.getItem('checkout'));
+        let entrega = document.getElementById('entrega').value;
+        let envio = entrega == 'domicilio' ? 10 : 0;
+        let total;
+        let subTotal = productos.reduce((total, product) => {
+          let { quantity, price } = product;
+          let accumulative = Number(quantity) * Number(price);
+
+          return total + accumulative;
+        }, 0);
+
+        Subtotal.innerHTML = `$${subTotal.toFixed(2)}`;
+
+        total = subTotal * 1.13;
+
+        if (entrega == 'domicilio') {
+          total = subTotal * 1.13 + 10;
+        }
+
+        Envio.innerHTML = `$${envio.toFixed(2)}`;
+        Total.innerHTML = `$${total.toFixed(2)}`;
+      }
+    })();
+  </script>
+</body>
+
+</html>
