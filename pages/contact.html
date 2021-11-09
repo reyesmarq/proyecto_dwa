@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About</title>
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="../assets/sweetalert-master/dist/sweetalert.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <style>
+    .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      user-select: none;
+    }
+
+    @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+      }
+    }
+
+    /* Chrome, Safari, Edge, Opera */
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+
+    /* Firefox */
+    input[type=number] {
+      -moz-appearance: textfield;
+    }
+  </style>
+
+</head>
+
+<body>
+  <header>
+    <div class="alert alert-dark alert-dismissible fade show rounded-0 d-flex justify-content-around" role="alert">
+      <div class="d-flex align-items-center">
+        <span class="mx-1">Usa el codigo</span>
+        <strong class="list-group-item p-1 px-2 rounded-3 text-danger">MR10</strong>
+        <span class="mx-1">para un 20% de descuento</span>
+      </div>
+
+      <div>
+        <h4 id="clock">
+          <span id="days" class="text-danger"></span>
+          <span class="text-white">D</span>
+          <span id="hours" class="text-danger"></span>
+          <span class="text-white">H</span>
+          <span id="minutes" class="text-danger"></span>
+          <span class="text-white">M</span>
+          <span id="seconds" class="text-danger"></span>
+          <span class="text-white">S</span>
+        </h4>
+      </div>
+
+      <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="about.html">About us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="contact.html">Contact Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                Dropdown
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+                <li><a class="dropdown-item" href="#">Something else here</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled">Disabled</a>
+            </li>
+          </ul>
+          <form class="d-flex">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          </form>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+
+  <br><br>
+  <main>
+    <div class="container">
+      <div class="row">
+        <div class="form-group">
+          <div class="form-column col-md-12 col-sm-12 col-xs-12">
+            <div class="form-group required">
+              <label for="nomMensa" class="control-label">Nombre</label>
+              <input class="form-control" type="text" name="nomMensa" id="nomMensa" placeholder="Nombre" required>
+            </div>
+          </div>
+          <br>
+          <div class="form-column col-md-12 col-sm-12 col-xs-12">
+            <div class="form-group required">
+              <label for="mailMensa" class="control-label">Correo</label>
+              <input class="form-control" type="text" name="mailMensa" id="mailMensa" placeholder="Correo" required>
+            </div>
+          </div>
+          <br>
+          <div class="form-column col-md-12 col-sm-12 col-xs-12">
+            <div class="form-group required">
+              <label for="telMensa" class="control-label">Teléfono</label>
+              <input class="form-control" type="number" name="telMensa" id="telMensa" placeholder="Teléfono" required>
+            </div>
+          </div>
+          <br>
+
+          <div class="form-column col-md-12 col-sm-12 col-xs-12">
+            <div class="form-group required">
+              <label for="titMensa" class="control-label">Título del mensaje</label>
+              <input class="form-control" type="text" name="titMensa" id="titMensa" placeholder="Título del mensaje"
+                required>
+            </div>
+          </div>
+          <br>
+          <div class="form-column col-md-12 col-sm-12 col-xs-12">
+            <div class="form-group required">
+              <label for="cuerpoMensa" class="control-label">Cuerpo del mensaje</label>
+              <textarea class="form-control" name="cuerpoMensa" id="cuerpoMensa" placeholder="Cuerpo del mensaje"
+                cols="50" rows="5" required></textarea>
+            </div>
+          </div>
+          <br><br>
+          <div class="form-column col-md-12 col-sm-12 col-xs-12">
+            <div class="form-group required">
+              <button id="enviar" name="enviar" class="btn btn-success btn-lg">Enviar</button>
+            </div>
+          </div>
+
+        </div>
+
+
+      </div>
+
+    </div>
+  </main>
+
+
+
+  <aside>
+    <a class="fixed-bottom m-1 text-end"
+      href="https://api.whatsapp.com/send?phone=50375127858&text=Hola%2C+quisiera+saber+las+ofertas+del+d%C3%ADa+de+hoy."
+      target="_blank">
+      <img src="../assets/images/logo-wasap.png" width="55" height="55">
+    </a>
+    <a class="fixed-bottom m-5 text-end" href="https://www.messenger.com/t/845262605684563" target="_blank">
+      <img src="../assets/images/Messenger_logo.png" width="55" height="55">
+    </a>
+  </aside>
+
+  <footer class="py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-2 my-1">
+          <ul class="list-group">
+            <li class="list-group-item border-0 text-uppercase fw-bold">
+              <small>Customer info</small>
+            </li>
+            <li class="list-group-item border-0">
+              <a href="" class="text-muted text-decoration-none">About SHEIN</a>
+            </li>
+            <li class="list-group-item border-0">
+              <a href="" class="text-muted text-decoration-none">Affiliate</a>
+            </li>
+            <li class="list-group-item border-0">
+              <a href="" class="text-muted text-decoration-none">Fashion blogger</a>
+            </li>
+            <li class="list-group-item border-0">
+              <a href="" class="text-muted text-decoration-none">Social responability</a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-md-2 my-1">
+          <ul class="list-group">
+            <li class="list-group-item border-0 text-uppercase fw-bold">
+              <small>Help & Support</small>
+            </li>
+            <li class="list-group-item border-0">
+              <a href="" class="text-muted text-decoration-none">Shipping info</a>
+            </li>
+            <li class="list-group-item border-0">
+              <a href="" class="text-muted text-decoration-none">Returns</a>
+            </li>
+            <li class="list-group-item border-0">
+              <a href="" class="text-muted text-decoration-none">How to order</a>
+            </li>
+            <li class="list-group-item border-0">
+              <a href="" class="text-muted text-decoration-none">How to Order</a>
+            </li>
+            <li class="list-group-item border-0">
+              <a href="" class="text-muted text-decoration-none">How to Track</a>
+            </li>
+            <li class="list-group-item border-0">
+              <a href="" class="text-muted text-decoration-none">Size Guide</a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-md-2 my-1">
+          <ul class="list-group">
+            <li class="list-group-item border-0 text-uppercase fw-bold">
+              <small>Customer care</small>
+            </li>
+            <li class="list-group-item border-0">
+              <a href="" class="text-muted text-decoration-none">Contact us</a>
+            </li>
+            <li class="list-group-item border-0">
+              <a href="" class="text-muted text-decoration-none">Payment Method</a>
+            </li>
+            <li class="list-group-item border-0">
+              <a href="" class="text-muted text-decoration-none">Bonux Point</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- footer right side -->
+        <div class="col my-1">
+          <div class="row">
+            <div class="col-md-8">
+              <p class="fw-bold text-uppercase">
+                <small>find us on</small>
+              </p>
+              <i class="mx-2 fs-2 | fa-brands fa-facebook-f"></i>
+              <i class="mx-2 fs-2 | fa-brands fa-instagram"></i>
+              <i class="mx-2 fs-2 | fa-brands fa-twitter"></i>
+              <i class="mx-2 fs-2 | fa-brands fa-youtube"></i>
+              <i class="mx-2 fs-2 | fa-brands fa-pinterest"></i>
+              <i class="mx-2 fs-2 | fa-brands fa-snapchat"></i>
+              <i class="mx-2 fs-2 | fa-brands fa-tiktok"></i>
+            </div>
+            <div class="col-md-4">
+              <p class="fw-bold text-uppercase">
+                <small>app</small>
+              </p>
+              <i class="mx-2 fs-2 | fa-brands fa-apple"></i>
+              <i class="mx-2 fs-2 | fa-brands fa-android"></i>
+            </div>
+            <div class="col-md-12 mt-4">
+              <p class="fw-bold text-uppercase">
+                <small>sign up for shein style news</small>
+              <form>
+                <div class="input-group">
+                  <input type="text" class="form-control" placeholder="Email address">
+                  <button class="btn btn-dark px-4" type="button">Subscribe</button>
+                </div>
+                <small>By clicking the subscribe button, you are agreeing to our Privacy and Cookie policy</small>
+              </form>
+              </p>
+            </div>
+
+            <div class="col">
+              <p class="fw-bold text-uppercase">
+                <small>we accept</small>
+              </p>
+              <i class="mx-2 fs-2 | fa-brands fa-cc-visa"></i>
+              <i class="mx-2 fs-2 | fa-brands fa-cc-mastercard"></i>
+              <i class="mx-2 fs-2 | fa-brands fa-cc-amex"></i>
+              <i class="mx-2 fs-2 | fa-brands fa-cc-discover"></i>
+              <i class="mx-2 fs-2 | fa-brands fa-cc-paypal"></i>
+              <i class="mx-2 fs-2 | fa-brands fa-bitcoin"></i>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-12 mt-4">
+          <div class="d-flex flex-column">
+            <small class="m-0">©2009-2021 SHEIN All Rights Reserved</small>
+            <ul class="list-group list-group-horizontal">
+              <li class="list-group-item border-0 border-end p-0 pe-2">
+                <a href="">
+                  <small class="text-dark">Privacy center</small>
+                </a>
+              </li>
+              <li class="list-group-item border-0 border-end p-0 px-2">
+                <a href="">
+                  <small class="text-dark">Privacy & Cookie policy</small>
+                </a>
+              </li>
+              <li class="list-group-item border-0 border-end p-0 px-2">
+                <a href="">
+                  <small class="text-dark">Manage Cookies</small>
+                </a>
+              </li>
+              <li class="list-group-item border-0 border-end p-0 px-2">
+                <a href="">
+                  <small class="text-dark">Terms and Conditions</small>
+                </a>
+              </li>
+              <li class="list-group-item border-0 border-end p-0 px-2">
+                <a href="">
+                  <small class="text-dark">Copyright Notice</small>
+                </a>
+              </li>
+              <li class="list-group-item border-0 border-end p-0 px-2">
+                <a href="">
+                  <small class="text-dark">Imprint</small>
+                </a>
+              </li>
+              <li class="list-group-item border-0 p-0 px-2">
+                <a href="">
+                  <small class="text-dark">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <span>El Salvador</span>
+                  </small>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../assets/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="../assets/sweetalert-master/dist/sweetalert.min.js"></script>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+  <script>
+    function getTimeRemaining(endtime) {
+      const total = Date.parse(endtime) - Date.parse(new Date());
+      const seconds = Math.floor((total / 1000) % 60);
+      const minutes = Math.floor((total / 1000 / 60) % 60);
+      const hours = Math.floor((total / (1000 * 60 * 60)) % 24);
+      const days = Math.floor(total / (1000 * 60 * 60 * 24));
+
+      return {
+        total,
+        days,
+        hours,
+        minutes,
+        seconds
+      };
+    }
+
+    function initializeClock(id, endtime) {
+      const clock = document.getElementById(id);
+      const daysSpan = clock.querySelector('#days');
+      const hoursSpan = clock.querySelector('#hours');
+      const minutesSpan = clock.querySelector('#minutes');
+      const secondsSpan = clock.querySelector('#seconds');
+
+
+      function updateClock() {
+        const t = getTimeRemaining(endtime);
+
+        daysSpan.innerHTML = t.days;
+        hoursSpan.innerHTML = ('0' + t.hours).slice(-2);
+        minutesSpan.innerHTML = ('0' + t.minutes).slice(-2);
+        secondsSpan.innerHTML = ('0' + t.seconds).slice(-2);
+
+        if (t.total <= 0) {
+          clearInterval(timeinterval);
+        }
+      }
+
+      updateClock();
+      const timeinterval = setInterval(updateClock, 1000);
+    }
+
+    const deadline = new Date(Date.parse(new Date()) + 15 * 24 * 60 * 60 * 1000);
+    initializeClock('clock', deadline);
+  </script>
+  <script type="text/javascript">
+
+    $(document).ready(function () {
+
+      $("#enviar").click(function () {
+
+        var nombre = $("#nomMensa").val();
+        var mail = $("#mailMensa").val();
+        var tel = $("#telMensa").val();
+        var titulo = $("#titMensa").val();
+        var cuerpo = $("#cuerpoMensa").val();
+
+        if (nombre != "" && mail != "" && tel != "" && titulo != "" && cuerpo != "") {
+          if (IsEmail(mail) == true) {
+            swal({
+              title: "¡Exito!",
+              text: "Correo enviado correctamente",
+              timer: 1500,
+              type: 'success',
+              closeOnConfirm: true,
+              closeOnCancel: true,
+              allowOutsideClick: false
+            }, function () {
+              window.location.href = "index.html";
+            });
+          }
+          else {
+
+            $("#nomMensa").val("");
+            $("#mailMensa").val("");
+            $("#telMensa").val("");
+            $("#titMensa").val("");
+            $("#cuerpoMensa").val("");
+
+            swal({
+              title: "Error",
+              text: "Ingrese un email válido y vuelva a intentarlo.",
+              timer: 1500,
+              type: 'error',
+              closeOnConfirm: true,
+              closeOnCancel: true,
+              allowOutsideClick: false
+            });
+          }
+        }
+        else {
+          $("#nomMensa").val("");
+          $("#mailMensa").val("");
+          $("#telMensa").val("");
+          $("#titMensa").val("");
+          $("#cuerpoMensa").val("");
+
+          swal({
+            title: "Error",
+            text: "Campos vacíos, llene todos los campos y vuelva a intentarlo",
+            timer: 1500,
+            type: 'error',
+            closeOnConfirm: true,
+            closeOnCancel: true,
+            allowOutsideClick: false
+          });
+        }
+
+      });
+
+      function IsEmail(email) {
+        var regex = /^([a-zA-Z0-9_\.\-\+])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+        if (!regex.test(email)) {
+          return false;
+        } else {
+          return true;
+        }
+      }
+
+    });
+
+  </script>
+</body>
+
+</html>

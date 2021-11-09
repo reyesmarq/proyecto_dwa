@@ -1,0 +1,142 @@
+[
+  {
+    "id": "1",
+    "description": "Blusa color perla, con lineas en toda la blusa",
+    "price": "55.00",
+    "categoria": "mujer",
+    "images": ["1.1.jpeg"]
+  },
+  {
+    "id": "2",
+    "description": "Camisa color turquesa con cuadros, manga larga",
+    "price": "35.00",
+    "categoria": "mujer",
+    "images": ["2.1.jpeg"]
+  },
+  {
+    "id": "3",
+    "description": "Sueter color marron, con detalles en bordes",
+    "price": "43.00",
+    "categoria": "mujer",
+    "images": ["3.1.jpeg"]
+  },
+  {
+    "id": "4",
+    "description": "Blusa color azul rey, con lineas blancas",
+    "price": "25.00",
+    "categoria": "mujer",
+    "images": ["4.1.jpeg"]
+  },
+  {
+    "id": "5",
+    "description": "Blusa color blanca, con manga larga, con cuello largo",
+    "price": "31.00",
+    "categoria": "mujer",
+    "images": ["5.1.jpeg"]
+  },
+  {
+    "id": "6",
+    "description": "Blusa color salmon con detalles estilo manchas de tigre",
+    "price": "19.00",
+    "categoria": "mujer",
+    "images": ["6.1.jpeg"]
+  },
+  {
+    "id": "7",
+    "description": "Abrigo largo color gris con lineas delgadas color blanco",
+    "price": "65.00",
+    "categoria": "mujer",
+    "images": ["7.1.jpeg"]
+  },
+  {
+    "id": "8",
+    "description": "Camisa color azul claro con rayas blancas, manga larga",
+    "price": "35.00",
+    "categoria": "hombre",
+    "images": ["8.1.jpeg"]
+  },
+  {
+    "id": "9",
+    "description": "Camisa color negro manga larga con cuello largo",
+    "price": "40.00",
+    "categoria": "hombre",
+    "images": ["9.1.jpeg"]
+  },
+  {
+    "id": "10",
+    "description": "Corbata color vino con lunares blancos",
+    "price": "15.00",
+    "categoria": "hombre",
+    "images": ["10.1.jpeg"]
+  },
+  {
+    "id": "11",
+    "description": "Corbata color negro con lineas delgadas grises",
+    "price": "23.00",
+    "categoria": "hombre",
+    "images": ["11.1.jpeg"]
+  },
+  {
+    "id": "12",
+    "description": "Short de algodon color negro",
+    "price": "28.00",
+    "categoria": "hombre",
+    "images": ["12.1.jpeg"]
+  },
+  {
+    "id": "13",
+    "description": "Pantalon jeans color azul con rasgaduras",
+    "price": "35.00",
+    "categoria": "hombre",
+    "images": ["13.1.jpeg"]
+  },
+  {
+    "id": "14",
+    "description": "Camisa color cian con mangas largas",
+    "price": "43.00",
+    "categoria": "hombre",
+    "images": ["14.1.jpeg"]
+  },
+  {
+    "id": "15",
+    "description": "Camisa color crema con mangas largas",
+    "price": "21.00",
+    "categoria": "niño",
+    "images": ["15.1.jpeg"]
+  },
+  {
+    "id": "16",
+    "description": "Camisa con cuadros rojos y azules con mangas largas",
+    "price": "29.00",
+    "categoria": "niño",
+    "images": ["16.1.jpeg"]
+  },
+  {
+    "id": "17",
+    "description": "Pantalon color caqui con bolsillos estilo jeans",
+    "price": "48.00",
+    "categoria": "niño",
+    "images": ["17.1.jpeg"]
+  },
+  {
+    "id": "18",
+    "description": "Camisa estilo polo color blanco con manga corta",
+    "price": "19.00",
+    "categoria": "niño",
+    "images": ["18.1.jpeg"]
+  },
+  {
+    "id": "19",
+    "description": "Gorro color gris con bolitas de tela en los extremos",
+    "price": "23.00",
+    "categoria": "niño",
+    "images": ["19.1.jpeg"]
+  },
+  {
+    "id": "20",
+    "description": "Chaqueta color verde oscuro con bolsa en el pecho",
+    "price": "45.00",
+    "categoria": "niño",
+    "images": ["20.1.jpeg"]
+  }
+]
