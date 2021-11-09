@@ -46,16 +46,16 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Home</a>
+              <a class="nav-link" aria-current="page" href="../index.html">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="./pages/about.html">About us</a>
+              <a class="nav-link" aria-current="page" href="./pages/about.html">About us</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="./pages/contact.html">Contact Us</a>
+              <a class="nav-link" aria-current="page" href="./pages/contact.html">Contact Us</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="./pages/tienda.html">Tienda</a>
+              <a class="nav-link active" aria-current="page" href="#">Tienda</a>
             </li>
           </ul>
         </div>
@@ -63,7 +63,47 @@
     </nav>
   </header>
 
-  
+  <main>
+    <div class="container mt-4 mb-4">
+      <div class="row gap-3">
+        <!-- Categorias -->
+        <div class="col-md-2 p-0">
+          <ul class="list-group">
+            <li class="list-group-item d-flex b:r:0">
+              <a class="flex-grow-1 text-decoration-none cursor:pointer text-dark"
+                href="./pages/productos/categoria.html?nombre=accesorios">
+                Accesorios
+              </a>
+            </li>
+
+            <li class="list-group-item d-flex">
+              <a class="flex-grow-1 text-decoration-none cursor:pointer text-dark"
+                href="./pages/productos/categoria.html?nombre=redes">
+                Redes
+              </a>
+            </li>
+
+            <li class="list-group-item d-flex b:r:0">
+              <a class="flex-grow-1 text-decoration-none cursor:pointer text-dark"
+                href="./pages/productos/categoria.html?nombre=energia">
+                Energia
+              </a>
+            </li>
+          </ul>
+        </div>
+        <!-- Contenido principal -->
+        <div class="col p-0">
+          <div class="border-bottom pb-2 mb-4">
+            <h5>Productos destacados</h5>
+          </div>
+          <!-- Contenido de las tarjetas de productos -->
+          <div class="row" id="productosContainer">
+            <!-- Secion donde se insertaran los productos a traves de javascript -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
 
   <aside>
     <a class="fixed-bottom m-1 text-end"
@@ -285,6 +325,57 @@
 
     const deadline = new Date(Date.parse(new Date()) + 15 * 24 * 60 * 60 * 1000);
     initializeClock('clock', deadline);
+  </script>
+
+  <!-- Script para insertar los datos dinamicamente -->
+  <script>
+    (async () => {
+      let productos = await fetch(
+        '../data/productos.json'
+      ).then((res) => res.json());
+
+      let ProductosContainer = document.getElementById('productosContainer');
+
+      let productosHtml = productos
+        .map((producto) => {
+          const { images, description, price, id } = producto;
+          const imageUrl = `../assets/images/${images[0]}`;
+          
+          return `
+          <div class="col-md-3">
+            <div class="card mb-4 border-0 shadow-sm card:effect">
+              <img src="${imageUrl}" alt="" class="card-img-top card:img:crop">
+              <div class="card-body">
+                <p class="cart-text small txt:trun:5">
+                  ${description}
+                </p>
+                <h6 class="card-title fw-bold text-primary">$${price}</h6>
+              </div>
+              <div class="card-footer d-flex justify-content-between bg-white border-0">
+                <button class="btn btn-success btn-sm"
+                  data-product-id=${id}
+                  data-product-image-url=${images[0]}
+                  data-product-description="${description}"
+                  data-product-price=${price}
+                >
+                  <i class="bi bi-cart me-2 pe-none"></i>
+                  <span class="pe-none">Agregar</span>
+                </button>
+                <a class="btn btn-outline-info btn-sm" href="./pages/producto.html?id=${id}" id="productoUrl">
+                  <i class="bi bi-plus-square me-2 pe-none"></i>
+                  <span class="pe-none">Ver mas</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        `;
+        })
+        .join(',')
+        .replace(/\,/g, '')
+        .toString();
+
+      ProductosContainer.innerHTML = productosHtml;
+    })()
   </script>
 </body>
 
