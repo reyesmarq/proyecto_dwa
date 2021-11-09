@@ -7,7 +7,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Proyecto DWA</title>
   <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
-  <!-- TODO: need to store lib to local -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
   <link rel="stylesheet" href="../assets/css/main.css">
 </head>
@@ -66,17 +65,35 @@
   <main>
     <div class="container mt-4 mb-4">
       <div class="row gap-3">
+        <!-- Contenido principal -->
+        <div class="col p-0">
+
+          <div class="border-bottom pb-2 mb-4">
+            <div aria-label="breadcrumb">
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item">Productos</li>
+                <li class="breadcrumb-item active text-success" aria-current="page" id="nombreCategoria"></li>
+              </ol>
+            </div>
+          </div>
+          <!-- Contenido de las tarjetas de productos -->
+          <div class="row" id="productosContainer">
+            <!-- Secion don de se insertaran los productos a traves de javascript -->
+          </div>
+        </div>
+
         <!-- Categorias -->
         <div class="col-md-2 p-0">
           <ul class="list-group">
             <li class="list-group-item d-flex b:r:0">
-              <a class="flex-grow-1 text-decoration-none cursor:pointer text-dark" href="./categoria.html?nombre=mujer">
+              <a class="flex-grow-1 text-decoration-none cursor:pointer text-dark"
+                href="./categoria.html?nombre=mujer">
                 Mujer
               </a>
             </li>
 
             <li class="list-group-item d-flex">
-              <a class="flex-grow-1 text-decoration-none cursor:pointer text-dark" href="./categoria.html?nombre=redes">
+              <a class="flex-grow-1 text-decoration-none cursor:pointer text-dark" href="./categoria.html?nombre=hombre">
                 Hombre
               </a>
             </li>
@@ -88,16 +105,6 @@
               </a>
             </li>
           </ul>
-        </div>
-        <!-- Contenido principal -->
-        <div class="col p-0">
-          <div class="border-bottom pb-2 mb-4">
-            <h5>Productos destacados</h5>
-          </div>
-          <!-- Contenido de las tarjetas de productos -->
-          <div class="row" id="productosContainer">
-            <!-- Secion donde se insertaran los productos a traves de javascript -->
-          </div>
         </div>
       </div>
     </div>
@@ -327,49 +334,73 @@
   <!-- Script para insertar los datos dinamicamente -->
   <script>
     (async () => {
+      let { pathname, search } = window.location;
+
+      let { nombre } = search
+        .split('?')
+        .map((pair) => {
+          if (pair !== '') return pair.split('=');
+        })
+        .filter((values) => values)
+        .reduce((json, params) => {
+          let key = params[0];
+          let value = params[1];
+          return { ...json, [key]: value };
+        }, {});
+
+      // si no existe id por parametro nos redirecciona a index
+      if (!nombre) window.location.href = '../../index.html';
+
       let productos = await fetch('../data/productos.json').then((res) => res.json());
+      let productosCategoria = productos.filter((p) => p.categoria == nombre);
+
+      // Si no se encuentra ningun producto con esa categoria regresar al index
+      if (productosCategoria.length === 0)
+        window.location.href = '../../index.html';
 
       let ProductosContainer = document.getElementById('productosContainer');
+      let NombreCategoria = document.getElementById('nombreCategoria');
 
-      let productosHtml = productos
-        .map((producto) => {
-          const { images, description, price, id } = producto;
+      let productosHtml = productosCategoria
+        .map((producto, index) => {
+          const { images, description, price, id, categoria } = producto;
           const imageUrl = `../assets/images/${images[0]}`;
 
           return `
-          <div class="col-md-3">
-            <div class="card mb-4 border-0 shadow-sm card:effect">
-              <img src="${imageUrl}" alt="" class="card-img-top card:img:crop">
-              <div class="card-body">
-                <p class="cart-text small txt:trun:5">
-                  ${description}
-                </p>
-                <h6 class="card-title fw-bold text-primary">$${price}</h6>
-              </div>
-              <div class="card-footer d-flex justify-content-between bg-white border-0">
-                <button class="btn btn-success btn-sm"
-                  data-product-id=${id}
-                  data-product-image-url=${images[0]}
-                  data-product-description="${description}"
-                  data-product-price=${price}
-                >
-                  <i class="bi bi-cart me-2 pe-none"></i>
-                  <span class="pe-none">Agregar</span>
-                </button>
-                <a class="btn btn-outline-info btn-sm" href="./pages/producto.html?id=${id}" id="productoUrl">
-                  <i class="bi bi-plus-square me-2 pe-none"></i>
-                  <span class="pe-none">Ver mas</span>
-                </a>
+            <div class="col-md-3">
+              <div class="card mb-4 border-0 shadow-sm card:effect">
+                <img src="${imageUrl}" alt="" class="card-img-top card:img:crop">
+                <div class="card-body">
+                  <p class="cart-text small txt:trun:5">
+                    ${description}
+                  </p>
+                  <h6 class="card-title fw-bold text-primary">$${price}</h6>
+                </div>
+                <div class="card-footer d-flex justify-content-between bg-white border-0">
+                  <button class="btn btn-success btn-sm"
+                    data-product-id=${id}
+                    data-product-image-url=${images[0]}
+                    data-product-description="${description}"
+                    data-product-price=${price}
+                  >
+                    <i class="bi bi-cart me-2 pe-none"></i>
+                    <span class="pe-none">Agregar</span>
+                  </button>
+                  <a class="btn btn-outline-info btn-sm" href="../producto.html?id=${id}" id="productoUrl">
+                    <i class="bi bi-plus-square me-2 pe-none"></i>
+                    <span class="pe-none">Ver mas</span>
+                  </a>
+                </div>
               </div>
             </div>
-          </div>
-        `;
+          `;
         })
         .join(',')
         .replace(/\,/g, '')
         .toString();
 
       ProductosContainer.innerHTML = productosHtml;
+      NombreCategoria.innerHTML = nombre;
     })()
   </script>
 </body>

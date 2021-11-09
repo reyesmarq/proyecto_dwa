@@ -101,42 +101,42 @@
     "id": "15",
     "description": "Camisa color crema con mangas largas",
     "price": "21.00",
-    "categoria": "niño",
+    "categoria": "ninio",
     "images": ["15.1.jpeg"]
   },
   {
     "id": "16",
     "description": "Camisa con cuadros rojos y azules con mangas largas",
     "price": "29.00",
-    "categoria": "niño",
+    "categoria": "ninio",
     "images": ["16.1.jpeg"]
   },
   {
     "id": "17",
     "description": "Pantalon color caqui con bolsillos estilo jeans",
     "price": "48.00",
-    "categoria": "niño",
+    "categoria": "ninio",
     "images": ["17.1.jpeg"]
   },
   {
     "id": "18",
     "description": "Camisa estilo polo color blanco con manga corta",
     "price": "19.00",
-    "categoria": "niño",
+    "categoria": "ninio",
     "images": ["18.1.jpeg"]
   },
   {
     "id": "19",
     "description": "Gorro color gris con bolitas de tela en los extremos",
     "price": "23.00",
-    "categoria": "niño",
+    "categoria": "ninio",
     "images": ["19.1.jpeg"]
   },
   {
     "id": "20",
     "description": "Chaqueta color verde oscuro con bolsa en el pecho",
     "price": "45.00",
-    "categoria": "niño",
+    "categoria": "ninio",
     "images": ["20.1.jpeg"]
   }
 ]
