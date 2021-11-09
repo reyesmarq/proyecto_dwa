@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', e => {
   ProductosContainer.addEventListener('click', e => {
     // if the click was on the redirect Url
     if (e.target.id === 'productoUrl') return;
-
+    debugger
     // Valida si el click no trae metadata, para no efectuar agregar al carrito
     if (
       !e.target.dataset['productId'] ||
@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', e => {
 
     // Si existe una notificacion, entonces ya no crear nodo y retornar.
     // Evita duplicado de notificaciones.
-    if (Alert) return;
+    // if (Alert) return;
     mostrarAlerta();
   });
 

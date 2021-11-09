@@ -10,6 +10,20 @@
   background-color: rgba(0, 0, 0, .7);
 }
 
+.zi\:normal {
+  z-index: 10;
+}
+
+.zi\:tooltip {
+  z-index: 100;
+}
+
+.alert\:fixed {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+}
+
 /************************************************/
 /* Progress bar height */
 /************************************************/
