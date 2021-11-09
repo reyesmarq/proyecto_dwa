@@ -3,7 +3,6 @@ document.addEventListener('DOMContentLoaded', e => {
   ProductosContainer.addEventListener('click', e => {
     // if the click was on the redirect Url
     if (e.target.id === 'productoUrl') return;
-    debugger
     // Valida si el click no trae metadata, para no efectuar agregar al carrito
     if (
       !e.target.dataset['productId'] ||
