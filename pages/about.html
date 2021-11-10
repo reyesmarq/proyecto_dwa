@@ -29,33 +29,11 @@
 
 <body>
   <header>
-    <div class="alert alert-dark alert-dismissible fade show rounded-0 d-flex justify-content-around" role="alert">
-      <div class="d-flex align-items-center">
-        <span class="mx-1">Usa el codigo</span>
-        <strong class="list-group-item p-1 px-2 rounded-3 text-danger">MR10</strong>
-        <span class="mx-1">para un 20% de descuento</span>
-      </div>
-
-      <div>
-        <h4 id="clock">
-          <span id="days" class="text-danger"></span>
-          <span class="text-white">D</span>
-          <span id="hours" class="text-danger"></span>
-          <span class="text-white">H</span>
-          <span id="minutes" class="text-danger"></span>
-          <span class="text-white">M</span>
-          <span id="seconds" class="text-danger"></span>
-          <span class="text-white">S</span>
-        </h4>
-      </div>
-
-      <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-    </div>
-
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
       <div class="container-fluid">
+        <a class="navbar-brand fw-bold" href="../index.html">PROYECTO DWA</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          aria-controls="navbarSupportedContent" aria-expanded="true" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -64,7 +42,7 @@
               <a class="nav-link" aria-current="page" href="../index.html">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">About us</a>
+              <a class="nav-link active" aria-current="page" href="about.html">About us</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" aria-current="page" href="./contact.html">Contact Us</a>
@@ -79,66 +57,69 @@
   </header>
 
   <main>
-    <div class="row featurette">
-      <div class="col-md-7">
-        <h2 class="featurette-heading">API de WhatsApp Business</h2>
-        <p class="lead">Diseñada para medianas y grandes empresas, la API de WhatsApp Business potencia tu comunicación
-          con clientes
-          de todo el mundo para que puedas conectarte con ellos por WhatsApp de forma simple, segura y confiable.</p>
-        <p class="lead">¿Quieres salir al mercado con la API de WhatsApp Business? Asóciate con uno de nuestros
-          proveedores de
-          soluciones empresariales globales que son expertos en mensajería entre empresas y clientes.</p>
-        <a href="https://www.whatsapp.com/business/api?lang=es" class="btn btn-info" role="button">Más información</a>
-      </div>
-
-      <div class="col-md-5">
-        <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500"
-          height="500" src="https://www.commbox.io/wp-content/uploads/2020/01/whatsapp_lp_illustration-001.svg"
-          role="img" preserveAspectRatio="xMidYMid slice" focusable="false"></img>
-      </div>
-    </div>
-
-    <hr class="featurette-divider">
-
-    <div class="row featurette">
-      <div class="col-md-7 order-md-2">
-        <h2 class="featurette-heading">Messengen API</h2>
-        <p class="lead">Descubre los aspectos básicos sobre cómo enviar y recibir datos de la gráfica social de Facebook
-          y cómo implementar
-          las API, las plataformas, los productos y los SDK para que se adapten a las necesidades de tu aplicación.</p>
-        <a href="https://developers.facebook.com/docs/messenger-platform/" class="btn btn-info" role="button">Más
-          información</a>
-      </div>
-      <div class="col-md-5 order-md-1">
-        <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500"
-          height="500"
-          src="data:image/png;base64,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"
-          role="img" preserveAspectRatio="xMidYMid slice" focusable="false"></img>
+    <div class="container py-5" style="margin-top: 100px;">
+      <div class="row featurette">
+        <div class="col-md-7">
+          <h2 class="featurette-heading">API de WhatsApp Business</h2>
+          <p class="lead">Diseñada para medianas y grandes empresas, la API de WhatsApp Business potencia tu comunicación
+            con clientes
+            de todo el mundo para que puedas conectarte con ellos por WhatsApp de forma simple, segura y confiable.</p>
+          <p class="lead">¿Quieres salir al mercado con la API de WhatsApp Business? Asóciate con uno de nuestros
+            proveedores de
+            soluciones empresariales globales que son expertos en mensajería entre empresas y clientes.</p>
+          <a href="https://www.whatsapp.com/business/api?lang=es" class="btn btn-info" role="button" target="_blank">Más información</a>
+        </div>
+  
+        <div class="col-md-5">
+          <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500"
+            height="500" src="https://www.commbox.io/wp-content/uploads/2020/01/whatsapp_lp_illustration-001.svg"
+            role="img" preserveAspectRatio="xMidYMid slice" focusable="false"></img>
+        </div>
       </div>
     </div>
 
     <hr class="featurette-divider">
 
-    <div class="row featurette">
-      <div class="col-md-7">
-        <h2 class="featurette-heading">Google Maps</h2>
-        <p class="lead">Crea apps increíbles con el conocimiento de Google del mundo real</p>
-        <p class="lead">Crea experiencias en tiempo real con las funciones más recientes de Maps, Routes y Places de
-          Google Maps Platform.
-          Producido por el equipo de Google para los desarrolladores de todo el mundo.</p>
-        <a href="https://developers.google.com/maps?hl=es-419" class="btn btn-info" role="button">Más información</a>
-      </div>
-      <div class="col-md-5">
-        <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500"
-          height="500" src="https://www.logo.wine/a/logo/Google_Maps/Google_Maps-Logo.wine.svg" role="img"
-          preserveAspectRatio="xMidYMid slice" focusable="false"></img>
+    <div class="container py-5 ">
+      <div class="row featurette">
+        <div class="col-md-7 order-md-2">
+          <h2 class="featurette-heading">Messengen API</h2>
+          <p class="lead">Descubre los aspectos básicos sobre cómo enviar y recibir datos de la gráfica social de Facebook
+            y cómo implementar
+            las API, las plataformas, los productos y los SDK para que se adapten a las necesidades de tu aplicación.</p>
+          <a href="https://developers.facebook.com/docs/messenger-platform/" class="btn btn-info" role="button" target="_blank">Más
+            información</a>
+        </div>
+        <div class="col-md-5 order-md-1">
+          <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500"
+            height="500"
+            src="data:image/png;base64,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"
+            role="img" preserveAspectRatio="xMidYMid slice" focusable="false"></img>
+        </div>
       </div>
     </div>
+
     <hr class="featurette-divider">
 
-    <footer class="container">
-      <p class="float-end"><a href="#">Back to top</a></p>
-    </footer>
+    <div class="container">
+      <div class="row featurette d-flex align-items-center">
+        <div class="col-md-7">
+          <h2 class="featurette-heading">Google Maps</h2>
+          <p class="lead">Crea apps increíbles con el conocimiento de Google del mundo real</p>
+          <p class="lead">Crea experiencias en tiempo real con las funciones más recientes de Maps, Routes y Places de
+            Google Maps Platform.
+            Producido por el equipo de Google para los desarrolladores de todo el mundo.</p>
+          <a href="https://developers.google.com/maps?hl=es-419" class="btn btn-info" role="button" target="_blank">Más información</a>
+        </div>
+        <div class="col-md-5">
+          <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500"
+            height="400" src="https://www.logo.wine/a/logo/Google_Maps/Google_Maps-Logo.wine.svg" role="img"
+            preserveAspectRatio="xMidYMid slice" focusable="false"></img>
+        </div>
+      </div>
+    </div>
+
+    <hr class="featurette-divider">
 
     <div class="container my-5">
       <div class="row mb-5">
@@ -221,15 +202,14 @@
     </div>
   </main>
 
+  <hr class="featurette-divider">
 
-
-  <aside>
-    <a class="fixed-bottom m-1 text-end"
-      href="https://api.whatsapp.com/send?phone=50375127858&text=Hola%2C+quisiera+saber+las+ofertas+del+d%C3%ADa+de+hoy."
-      target="_blank">
+  <aside class="d-flex justify-content-end fixed-bottom">
+    <a class="m-2" href="https://api.whatsapp.com/send?phone=50379743949&text=Hola%2C+quisiera+saber+las+ofertas+del+d%C3%ADa+de+hoy." target="_blank">
       <img src="../assets/images/logo-wasap.png" width="55" height="55">
     </a>
-    <a class="fixed-bottom m-5 text-end" href="https://www.messenger.com/t/845262605684563" target="_blank">
+    <!--  -->
+    <a class="m-2" href="https://www.messenger.com/t/845262605684563" target="_blank">
       <img src="../assets/images/Messenger_logo.png" width="55" height="55">
     </a>
   </aside>
@@ -240,57 +220,51 @@
         <div class="col-md-2 my-1">
           <ul class="list-group">
             <li class="list-group-item border-0 text-uppercase fw-bold">
-              <small>Customer info</small>
+              <small>Información de cliente</small>
             </li>
             <li class="list-group-item border-0">
-              <a href="" class="text-muted text-decoration-none">About SHEIN</a>
+              <a href="" class="text-muted text-decoration-none">About</a>
             </li>
             <li class="list-group-item border-0">
-              <a href="" class="text-muted text-decoration-none">Affiliate</a>
+              <a href="" class="text-muted text-decoration-none">Afiliarse</a>
             </li>
             <li class="list-group-item border-0">
               <a href="" class="text-muted text-decoration-none">Fashion blogger</a>
             </li>
             <li class="list-group-item border-0">
-              <a href="" class="text-muted text-decoration-none">Social responability</a>
+              <a href="" class="text-muted text-decoration-none">Responsabilidad social</a>
             </li>
           </ul>
         </div>
         <div class="col-md-2 my-1">
           <ul class="list-group">
             <li class="list-group-item border-0 text-uppercase fw-bold">
-              <small>Help & Support</small>
+              <small>Soporte y ayuda</small>
             </li>
             <li class="list-group-item border-0">
-              <a href="" class="text-muted text-decoration-none">Shipping info</a>
+              <a href="" class="text-muted text-decoration-none">Información de compra</a>
             </li>
             <li class="list-group-item border-0">
-              <a href="" class="text-muted text-decoration-none">Returns</a>
+              <a href="" class="text-muted text-decoration-none">Cómo ordenar</a>
             </li>
             <li class="list-group-item border-0">
-              <a href="" class="text-muted text-decoration-none">How to order</a>
+              <a href="" class="text-muted text-decoration-none">Cómo rastrear</a>
             </li>
             <li class="list-group-item border-0">
-              <a href="" class="text-muted text-decoration-none">How to Order</a>
-            </li>
-            <li class="list-group-item border-0">
-              <a href="" class="text-muted text-decoration-none">How to Track</a>
-            </li>
-            <li class="list-group-item border-0">
-              <a href="" class="text-muted text-decoration-none">Size Guide</a>
+              <a href="" class="text-muted text-decoration-none">Guía de tamaño</a>
             </li>
           </ul>
         </div>
         <div class="col-md-2 my-1">
           <ul class="list-group">
             <li class="list-group-item border-0 text-uppercase fw-bold">
-              <small>Customer care</small>
+              <small>Atención al cliente</small>
             </li>
             <li class="list-group-item border-0">
-              <a href="" class="text-muted text-decoration-none">Contact us</a>
+              <a href="" class="text-muted text-decoration-none">Contáctanos</a>
             </li>
             <li class="list-group-item border-0">
-              <a href="" class="text-muted text-decoration-none">Payment Method</a>
+              <a href="" class="text-muted text-decoration-none">Método de pago</a>
             </li>
             <li class="list-group-item border-0">
               <a href="" class="text-muted text-decoration-none">Bonux Point</a>
@@ -322,20 +296,20 @@
             </div>
             <div class="col-md-12 mt-4">
               <p class="fw-bold text-uppercase">
-                <small>sign up for shein style news</small>
+                <small>Suscribir al cartel de noticias</small>
               <form>
                 <div class="input-group">
                   <input type="text" class="form-control" placeholder="Email address">
-                  <button class="btn btn-dark px-4" type="button">Subscribe</button>
+                  <button class="btn btn-dark px-4" type="button">Suscribirse</button>
                 </div>
-                <small>By clicking the subscribe button, you are agreeing to our Privacy and Cookie policy</small>
+                <small>Al presionar el botón acepta nuestros términos de Privacidad y de Cookies</small>
               </form>
               </p>
             </div>
 
             <div class="col">
               <p class="fw-bold text-uppercase">
-                <small>we accept</small>
+                <small>aceptamos</small>
               </p>
               <i class="mx-2 fs-2 | fa-brands fa-cc-visa"></i>
               <i class="mx-2 fs-2 | fa-brands fa-cc-mastercard"></i>
@@ -349,36 +323,31 @@
 
         <div class="col-md-12 mt-4">
           <div class="d-flex flex-column">
-            <small class="m-0">©2009-2021 SHEIN All Rights Reserved</small>
+            <small class="m-0">©2021  Derechos Reservados</small>
             <ul class="list-group list-group-horizontal">
               <li class="list-group-item border-0 border-end p-0 pe-2">
                 <a href="">
-                  <small class="text-dark">Privacy center</small>
+                  <small class="text-dark">Centro de Privacidad</small>
                 </a>
               </li>
               <li class="list-group-item border-0 border-end p-0 px-2">
                 <a href="">
-                  <small class="text-dark">Privacy & Cookie policy</small>
+                  <small class="text-dark">Política de Privacidad y Cookies</small>
                 </a>
               </li>
               <li class="list-group-item border-0 border-end p-0 px-2">
                 <a href="">
-                  <small class="text-dark">Manage Cookies</small>
+                  <small class="text-dark">Administrar Cookies</small>
                 </a>
               </li>
               <li class="list-group-item border-0 border-end p-0 px-2">
                 <a href="">
-                  <small class="text-dark">Terms and Conditions</small>
+                  <small class="text-dark">Términos and Condiciones</small>
                 </a>
               </li>
               <li class="list-group-item border-0 border-end p-0 px-2">
                 <a href="">
                   <small class="text-dark">Copyright Notice</small>
-                </a>
-              </li>
-              <li class="list-group-item border-0 border-end p-0 px-2">
-                <a href="">
-                  <small class="text-dark">Imprint</small>
                 </a>
               </li>
               <li class="list-group-item border-0 p-0 px-2">

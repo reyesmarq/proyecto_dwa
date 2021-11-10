@@ -13,8 +13,34 @@
 </head>
 
 <body>
-  <header>
-    <div class="alert alert-primary alert-dismissible fade show rounded-0 d-flex justify-content-around" role="alert">
+  <header class="fixed-top bg-light">
+    
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark " >
+      <div class="container-fluid">
+        <a class="navbar-brand fw-bold" href="index.html">PROYECTO DWA</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="true" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="./pages/about.html">About us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="./pages/contact.html">Contact Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="./pages/tienda.html">Tienda</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="alert alert-primary alert-dismissible fade show rounded-0 d-flex justify-content-around" role="alert" style="margin-top: 5px;">
       <div class="d-flex align-items-center">
         <span class="mx-1">Usa el codigo</span>
         <strong class="list-group-item p-1 px-2 rounded-3 text-danger">MR10</strong>
@@ -36,35 +62,10 @@
 
       <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
     </div>
-
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <div class="container-fluid">
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="./pages/about.html">About us</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="./pages/contact.html">Contact Us</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="./pages/tienda.html">Tienda</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
   </header>
 
   <main>
-    <div class="container-fluid">
+    <div class="container-fluid" style="margin-top: 100px;">
 
       <!-- Secondary bar -->
       <div class="container-fluid my-2" style="background-color: #eee;">
@@ -86,7 +87,7 @@
           <div class="col">
             <h4 class="m-0 p-2">
               <i class="fa-solid fa-truck-fast mx-1"></i>
-              Shipping info
+              Shopping info
             </h4>
           </div>
 
@@ -102,7 +103,7 @@
           <div>
             <p class="display-6">It's the</p>
             <h5 class="display-1 fw-bold">Black Friday</h5>
-            <p class="text-end">More deals >></p>
+            <p class="text-end">Más detalles</p>
           </div>
         </div>
       </div>
@@ -111,22 +112,22 @@
         <div class="row text-center p-1">
           <div class="col">
             <p class="m-0 p-2 fs-2">US$10 <small class="bg-dark fs-4 text-white px-2 text-uppercase">off</small></p>
-            <p class="fs-5">On orders of US$90+</p>
+            <p class="fs-5">En ordenes de US$30+</p>
           </div>
 
           <div class="col">
-            <p class="m-0 p-2 fs-2">US$10 <small class="bg-dark fs-4 text-white px-2 text-uppercase">off</small></p>
-            <p class="fs-5">On orders of US$90+</p>
+            <p class="m-0 p-2 fs-2">US$30 <small class="bg-dark fs-4 text-white px-2 text-uppercase">off</small></p>
+            <p class="fs-5">En ordenes de US$90+</p>
           </div>
 
           <div class="col">
-            <p class="m-0 p-2 fs-2">US$10 <small class="bg-dark fs-4 text-white px-2 text-uppercase">off</small></p>
-            <p class="fs-5">On orders of US$90+</p>
+            <p class="m-0 p-2 fs-2">US$15 <small class="bg-dark fs-4 text-white px-2 text-uppercase">off</small></p>
+            <p class="fs-5">En ordenes de US$55+</p>
           </div>
 
           <div class="col">
-            <p class="m-0 p-2 fs-2">US$10 <small class="bg-dark fs-4 text-white px-2 text-uppercase">off</small></p>
-            <p class="fs-5">On orders of US$90+</p>
+            <p class="m-0 p-2 fs-2">US$22 <small class="bg-dark fs-4 text-white px-2 text-uppercase">off</small></p>
+            <p class="fs-5">En ordenes de US$70+</p>
           </div>
         </div>
       </div>
@@ -134,7 +135,7 @@
 
     <!-- Categories -->
     <div class="my-4">
-      <h3 class="text-center my-4">Shop by category</h3>
+      <h1 class="text-center my-4">Comprar por categoría</h1>
       <div class="container">
         <div class="row">
           <!-- category list -->
@@ -208,7 +209,7 @@
 
     <!-- Campaigns -->
     <div>
-      <h3 class="text-center my-4">#Campaigns</h3>
+      <h1 class="text-center my-4">#Campaigns</h1>
       <div class="my-4 container-fluid">
         <div class="card bg-dark text-white border-0">
           <img
@@ -217,8 +218,8 @@
           <div class="card-img-overlay" style="background-color: rgba(0, 0, 0, .2);">
             <h5 class="display-1 fw-bold m-0">Black</h5>
             <h5 class="display-1 text-black m-0 mb-5 ms-5">Friday</h5>
-            <p class="card-text ms-5 fs-3">Games, prices, and more. You don't want to miss it</p>
-            <button class="btn btn-dark ms-5">See more</button>
+            <p class="card-text ms-5 fs-3">Juegos, precios and más. No te lo pierdas</p>
+            <button class="btn btn-dark ms-5">Ver más</button>
           </div>
         </div>
       </div>
@@ -246,7 +247,7 @@
                 class="d-block w-100 u:banner" alt="...">
               <div class="carousel-caption d-none d-md-block u:banner-text">
                 <h5 class="display-3">Black friday</h5>
-                <p>Games, prices, and more. You don't want to miss it</p>
+                <p>Juegos, precios and más. No te lo pierdas</p>
               </div>
             </div>
             <div class="carousel-item">
@@ -273,7 +274,7 @@
 
     <div class="container-fluid">
       <!-- Flash sales -->
-      <h3 class="text-center my-4">Flash sale</h3>
+      <h1 class="text-center my-4">Flash sale</h1>
       <!-- Flash sale carousel -->
       <div class="row mx-auto my-auto justify-content-center">
         <div id="flashSaleCarousel" class="carousel slide u:slider" data-bs-ride="carousel">
@@ -290,12 +291,12 @@
                     </h6>
 
                     <div class="progress">
-                      <div class="progress-bar bg-warning" role="progressbar" style="width: 25%" aria-valuenow="25"
+                      <div class="progress-bar bg-warning" role="progressbar" style="width: 44%" aria-valuenow="25"
                         aria-valuemin="0" aria-valuemax="100"></div>
                     </div>
                     <div class="d-flex justify-content-between">
                       <small class="text-muted fs-sm">87 sold</small>
-                      <small class="text-muted fs-sm">44.%</small>
+                      <small class="text-muted fs-sm">44%</small>
                     </div>
                   </div>
                 </div>
@@ -313,12 +314,12 @@
                     </h6>
 
                     <div class="progress">
-                      <div class="progress-bar bg-warning" role="progressbar" style="width: 25%" aria-valuenow="25"
+                      <div class="progress-bar bg-warning" role="progressbar" style="width: 70%" aria-valuenow="25"
                         aria-valuemin="0" aria-valuemax="100"></div>
                     </div>
                     <div class="d-flex justify-content-between">
                       <small class="text-muted fs-sm">87 sold</small>
-                      <small class="text-muted fs-sm">44.%</small>
+                      <small class="text-muted fs-sm">70%</small>
                     </div>
                   </div>
                 </div>
@@ -341,7 +342,7 @@
                     </div>
                     <div class="d-flex justify-content-between">
                       <small class="text-muted fs-sm">87 sold</small>
-                      <small class="text-muted fs-sm">44.%</small>
+                      <small class="text-muted fs-sm">25%</small>
                     </div>
                   </div>
                 </div>
@@ -359,12 +360,12 @@
                     </h6>
 
                     <div class="progress">
-                      <div class="progress-bar bg-warning" role="progressbar" style="width: 25%" aria-valuenow="25"
+                      <div class="progress-bar bg-warning" role="progressbar" style="width: 62%" aria-valuenow="25"
                         aria-valuemin="0" aria-valuemax="100"></div>
                     </div>
                     <div class="d-flex justify-content-between">
                       <small class="text-muted fs-sm">87 sold</small>
-                      <small class="text-muted fs-sm">44.%</small>
+                      <small class="text-muted fs-sm">62%</small>
                     </div>
                   </div>
                 </div>
@@ -382,12 +383,12 @@
                     </h6>
 
                     <div class="progress">
-                      <div class="progress-bar bg-warning" role="progressbar" style="width: 25%" aria-valuenow="25"
+                      <div class="progress-bar bg-warning" role="progressbar" style="width: 88%" aria-valuenow="25"
                         aria-valuemin="0" aria-valuemax="100"></div>
                     </div>
                     <div class="d-flex justify-content-between">
                       <small class="text-muted fs-sm">87 sold</small>
-                      <small class="text-muted fs-sm">44.%</small>
+                      <small class="text-muted fs-sm">88%</small>
                     </div>
                   </div>
                 </div>
@@ -405,12 +406,12 @@
                     </h6>
 
                     <div class="progress">
-                      <div class="progress-bar bg-warning" role="progressbar" style="width: 25%" aria-valuenow="25"
+                      <div class="progress-bar bg-warning" role="progressbar" style="width: 15%" aria-valuenow="25"
                         aria-valuemin="0" aria-valuemax="100"></div>
                     </div>
                     <div class="d-flex justify-content-between">
                       <small class="text-muted fs-sm">87 sold</small>
-                      <small class="text-muted fs-sm">44.%</small>
+                      <small class="text-muted fs-sm">15%</small>
                     </div>
                   </div>
                 </div>
@@ -433,7 +434,7 @@
     <!-- Brands -->
     <div class="my-4">
       <div class="container-fluid">
-        <h3 class="text-center my-4">#Brands</h3>
+        <h1 class="text-center my-4">#Brands</h1>
         <div class="row">
           <div class="col-md-4">
             <div class="card bg-dark text-white border-0">
@@ -441,7 +442,7 @@
                 src="https://images.pexels.com/photos/8484078/pexels-photo-8484078.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
                 class="card-img" alt="...">
               <div class="card-img-overlay d-flex justify-content-center align-items-end">
-                <h5 class="card-title d-inline u:banner-text p-2 rounded">Another text</h5>
+                <h5 class="card-title d-inline u:banner-text p-2 rounded">Ver más</h5>
               </div>
             </div>
           </div>
@@ -450,9 +451,9 @@
               <img
                 src="https://images.pexels.com/photos/3764007/pexels-photo-3764007.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
                 class="card-img" alt="...">
-              <div class="card-img-overlay d-flex justify-content-center align-items-center">
-                <h5 class="card-title d-inline u:banner-text p-2 rounded display-4">Brand mark here</h5>
-              </div>
+                <div class="card-img-overlay d-flex justify-content-center align-items-end">
+                  <h5 class="card-title d-inline u:banner-text p-2 rounded">Ver más</h5>
+                </div>
             </div>
           </div>
           <div class="col-md-4">
@@ -461,7 +462,7 @@
                 src="https://images.pexels.com/photos/8484061/pexels-photo-8484061.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
                 class="card-img" alt="...">
               <div class="card-img-overlay d-flex justify-content-center align-items-end">
-                <h5 class="card-title d-inline u:banner-text p-2 rounded">View all >></h5>
+                <h5 class="card-title d-inline u:banner-text p-2 rounded">Ver más</h5>
               </div>
             </div>
           </div>
@@ -472,7 +473,7 @@
     <div class="container-fluid">
       <div class="container-fluid">
         <!-- Daily Drops -->
-        <h3 class="text-center my-4">Daily Drops</h3>
+        <h1 class="text-center my-4">Daily Drops</h1>
         <!-- Daily Drops carousel -->
         <div class="row mx-auto my-auto justify-content-center">
           <div id="dailyDropsCarousel" class="carousel slide u:slider" data-bs-ride="carousel">
@@ -582,8 +583,8 @@
       </div>
 
       <!-- Style gallery -->
-      <div class="container-fluid">
-        <h3 class="text-center">Style content</h3>
+      <div class="container-fluid mt-3">
+        <h1 class="text-center mt-2">Contenido de estilos</h1>
         <div class="row justify-content-center">
           <div class="col-md-2">
             <div class="card border-0">
@@ -591,7 +592,7 @@
                 src="https://images.pexels.com/photos/8336658/pexels-photo-8336658.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
                 class="card-img-top" style="max-height: 434px">
               <div class="card-img-overlay d-flex justify-content-center align-items-end text-white">
-                <p class="card-title d-inline u:banner-text p-2 rounded">Shop this product</p>
+                <p class="card-title d-inline u:banner-text p-2 rounded">Comprar este producto</p>
               </div>
             </div>
           </div>
@@ -601,7 +602,7 @@
                 src="https://images.pexels.com/photos/6770913/pexels-photo-6770913.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
                 class="card-img-top" style="max-height: 434px">
               <div class="card-img-overlay d-flex justify-content-center align-items-end text-white">
-                <p class="card-title d-inline u:banner-text p-2 rounded">Shop this product</p>
+                <p class="card-title d-inline u:banner-text p-2 rounded">Comprar este producto</p>
               </div>
             </div>
           </div>
@@ -611,7 +612,7 @@
                 src="https://images.pexels.com/photos/7945660/pexels-photo-7945660.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
                 class="card-img-top" style="max-height: 434px">
               <div class="card-img-overlay d-flex justify-content-center align-items-end text-white">
-                <p class="card-title d-inline u:banner-text p-2 rounded">Shop this product</p>
+                <p class="card-title d-inline u:banner-text p-2 rounded">Comprar este producto</p>
               </div>
             </div>
           </div>
@@ -621,7 +622,7 @@
                 src="https://images.pexels.com/photos/8330427/pexels-photo-8330427.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
                 class="card-img-top" style="max-height: 434px">
               <div class="card-img-overlay d-flex justify-content-center align-items-end text-white">
-                <p class="card-title d-inline u:banner-text p-2 rounded">Shop this product</p>
+                <p class="card-title d-inline u:banner-text p-2 rounded">Comprar este producto</p>
               </div>
             </div>
           </div>
@@ -631,32 +632,31 @@
                 src="https://images.pexels.com/photos/10047326/pexels-photo-10047326.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
                 class="card-img-top" style="max-height: 434px">
               <div class="card-img-overlay d-flex justify-content-center align-items-end text-white">
-                <p class="card-title d-inline u:banner-text p-2 rounded">Shop this product</p>
+                <p class="card-title d-inline u:banner-text p-2 rounded">Comprar este producto</p>
               </div>
             </div>
           </div>
         </div>
 
         <!-- pills -->
-        <div class="my-3 d-flex justify-content-center">
-          <span class="badge rounded-pill bg-primary fs-6 fw-normal p-3 mx-2">Fall style</span>
-          <span class="badge rounded-pill bg-primary fs-6 fw-normal p-3 mx-2">Cozy style</span>
-          <span class="badge rounded-pill bg-primary fs-6 fw-normal p-3 mx-2">Girls outing</span>
-          <span class="badge rounded-pill bg-primary fs-6 fw-normal p-3 mx-2">Elegant lady</span>
-          <span class="badge rounded-pill bg-primary fs-6 fw-normal p-3 mx-2">Embrace Casual style</span>
-          <span class="badge rounded-pill bg-primary fs-6 fw-normal p-3 mx-2">Curve Style</span>
-          <span class="badge rounded-pill bg-primary fs-6 fw-normal p-3 mx-2">Date</span>
+        <div class="my-3 d-flex justify-content-center flex-wrap flex-xxl-nowrap flex-xl-nowrap flex-lg-nowrap">
+          <span class="badge rounded-pill bg-primary fs-6 fw-normal p-3 m-2">Estilo de otoño</span>
+          <span class="badge rounded-pill bg-primary fs-6 fw-normal p-3 m-2">Estilo acogedor</span>
+          <span class="badge rounded-pill bg-primary fs-6 fw-normal p-3 m-2">Salida de chicas</span>
+          <span class="badge rounded-pill bg-primary fs-6 fw-normal p-3 m-2">Dama elegante</span>
+          <span class="badge rounded-pill bg-primary fs-6 fw-normal p-3 m-2">Estilo Embrace Casual</span>
+          <span class="badge rounded-pill bg-primary fs-6 fw-normal p-3 m-2">Estilo de Curva</span>
+          <span class="badge rounded-pill bg-primary fs-6 fw-normal p-3 m-2">Citas</span>
         </div>
       </div>
   </main>
-
-  <aside>
-    <a class="fixed-bottom m-1 text-end"
-      href="https://api.whatsapp.com/send?phone=50375127858&text=Hola%2C+quisiera+saber+las+ofertas+del+d%C3%ADa+de+hoy."
-      target="_blank">
+  <hr class="featurette-divider">
+  <aside class="d-flex justify-content-end fixed-bottom">
+    <a class="m-2" href="https://api.whatsapp.com/send?phone=50379743949&text=Hola%2C+quisiera+saber+las+ofertas+del+d%C3%ADa+de+hoy." target="_blank">
       <img src="./assets/images/logo-wasap.png" width="55" height="55">
     </a>
-    <a class="fixed-bottom m-5 text-end" href="https://www.messenger.com/t/845262605684563" target="_blank">
+    <!--  -->
+    <a class="m-2" href="https://www.messenger.com/t/845262605684563" target="_blank">
       <img src="./assets/images/Messenger_logo.png" width="55" height="55">
     </a>
   </aside>
@@ -667,57 +667,51 @@
         <div class="col-md-2 my-1">
           <ul class="list-group">
             <li class="list-group-item border-0 text-uppercase fw-bold">
-              <small>Customer info</small>
+              <small>Información de cliente</small>
             </li>
             <li class="list-group-item border-0">
-              <a href="" class="text-muted text-decoration-none">About SHEIN</a>
+              <a href="" class="text-muted text-decoration-none">About</a>
             </li>
             <li class="list-group-item border-0">
-              <a href="" class="text-muted text-decoration-none">Affiliate</a>
+              <a href="" class="text-muted text-decoration-none">Afiliarse</a>
             </li>
             <li class="list-group-item border-0">
               <a href="" class="text-muted text-decoration-none">Fashion blogger</a>
             </li>
             <li class="list-group-item border-0">
-              <a href="" class="text-muted text-decoration-none">Social responability</a>
+              <a href="" class="text-muted text-decoration-none">Responsabilidad social</a>
             </li>
           </ul>
         </div>
         <div class="col-md-2 my-1">
           <ul class="list-group">
             <li class="list-group-item border-0 text-uppercase fw-bold">
-              <small>Help & Support</small>
+              <small>Soporte y ayuda</small>
             </li>
             <li class="list-group-item border-0">
-              <a href="" class="text-muted text-decoration-none">Shipping info</a>
+              <a href="" class="text-muted text-decoration-none">Información de compra</a>
             </li>
             <li class="list-group-item border-0">
-              <a href="" class="text-muted text-decoration-none">Returns</a>
+              <a href="" class="text-muted text-decoration-none">Cómo ordenar</a>
             </li>
             <li class="list-group-item border-0">
-              <a href="" class="text-muted text-decoration-none">How to order</a>
+              <a href="" class="text-muted text-decoration-none">Cómo rastrear</a>
             </li>
             <li class="list-group-item border-0">
-              <a href="" class="text-muted text-decoration-none">How to Order</a>
-            </li>
-            <li class="list-group-item border-0">
-              <a href="" class="text-muted text-decoration-none">How to Track</a>
-            </li>
-            <li class="list-group-item border-0">
-              <a href="" class="text-muted text-decoration-none">Size Guide</a>
+              <a href="" class="text-muted text-decoration-none">Guía de tamaño</a>
             </li>
           </ul>
         </div>
         <div class="col-md-2 my-1">
           <ul class="list-group">
             <li class="list-group-item border-0 text-uppercase fw-bold">
-              <small>Customer care</small>
+              <small>Atención al cliente</small>
             </li>
             <li class="list-group-item border-0">
-              <a href="" class="text-muted text-decoration-none">Contact us</a>
+              <a href="" class="text-muted text-decoration-none">Contáctanos</a>
             </li>
             <li class="list-group-item border-0">
-              <a href="" class="text-muted text-decoration-none">Payment Method</a>
+              <a href="" class="text-muted text-decoration-none">Método de pago</a>
             </li>
             <li class="list-group-item border-0">
               <a href="" class="text-muted text-decoration-none">Bonux Point</a>
@@ -749,20 +743,20 @@
             </div>
             <div class="col-md-12 mt-4">
               <p class="fw-bold text-uppercase">
-                <small>sign up for shein style news</small>
+                <small>Suscribir al cartel de noticias</small>
               <form>
                 <div class="input-group">
                   <input type="text" class="form-control" placeholder="Email address">
-                  <button class="btn btn-dark px-4" type="button">Subscribe</button>
+                  <button class="btn btn-dark px-4" type="button">Suscribirse</button>
                 </div>
-                <small>By clicking the subscribe button, you are agreeing to our Privacy and Cookie policy</small>
+                <small>Al presionar el botón acepta nuestros términos de Privacidad y de Cookies</small>
               </form>
               </p>
             </div>
 
             <div class="col">
               <p class="fw-bold text-uppercase">
-                <small>we accept</small>
+                <small>aceptamos</small>
               </p>
               <i class="mx-2 fs-2 | fa-brands fa-cc-visa"></i>
               <i class="mx-2 fs-2 | fa-brands fa-cc-mastercard"></i>
@@ -776,36 +770,31 @@
 
         <div class="col-md-12 mt-4">
           <div class="d-flex flex-column">
-            <small class="m-0">©2009-2021 SHEIN All Rights Reserved</small>
+            <small class="m-0">©2021  Derechos Reservados</small>
             <ul class="list-group list-group-horizontal">
               <li class="list-group-item border-0 border-end p-0 pe-2">
                 <a href="">
-                  <small class="text-dark">Privacy center</small>
+                  <small class="text-dark">Centro de Privacidad</small>
                 </a>
               </li>
               <li class="list-group-item border-0 border-end p-0 px-2">
                 <a href="">
-                  <small class="text-dark">Privacy & Cookie policy</small>
+                  <small class="text-dark">Política de Privacidad y Cookies</small>
                 </a>
               </li>
               <li class="list-group-item border-0 border-end p-0 px-2">
                 <a href="">
-                  <small class="text-dark">Manage Cookies</small>
+                  <small class="text-dark">Administrar Cookies</small>
                 </a>
               </li>
               <li class="list-group-item border-0 border-end p-0 px-2">
                 <a href="">
-                  <small class="text-dark">Terms and Conditions</small>
+                  <small class="text-dark">Términos and Condiciones</small>
                 </a>
               </li>
               <li class="list-group-item border-0 border-end p-0 px-2">
                 <a href="">
                   <small class="text-dark">Copyright Notice</small>
-                </a>
-              </li>
-              <li class="list-group-item border-0 border-end p-0 px-2">
-                <a href="">
-                  <small class="text-dark">Imprint</small>
                 </a>
               </li>
               <li class="list-group-item border-0 p-0 px-2">
